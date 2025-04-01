@@ -6,6 +6,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Check if the 'kurzel' cookie exists and autofill the field
     const kurzelCookie = getCookie("kurzel");
+    const pwCookie = getCookie("pw");
+    if (pwCookie) {
+        document.querySelector('input[name="password"]').value = pwCookie;
+    }
     if (kurzelCookie) {
         console.log("Cookie found:", kurzelCookie); // Debugging
         document.querySelector('input[name="kurzel"]').value = kurzelCookie;
@@ -20,8 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const kurzelValue = document.querySelector('input[name="kurzel"]').value;
         if (kurzelValue) {
-            console.log("Setting cookie with value:", kurzelValue); // Debugging
             setCookie("kurzel", kurzelValue, 3); // Set cookie for 3 hours
+            setCookie("pw", document.querySelector('input[name="password"]').value, 3); // Set cookie for 3 hours
+
         } else {
             console.log("No value in 'kurzel' field to set cookie."); // Debugging
         }
@@ -30,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let formData = new FormData(this);
     
         try {
-            let response = await fetch('https://script.google.com/macros/s/AKfycbzO1ylwkUFx0w0I0B-76MU33605QPP7Nby6NJEgaKn3yrOURhCj1CjSrC0qXzldbEPQ/exec', {
+            let response = await fetch('https://script.google.com/macros/s/AKfycbxg-qX7lte9bPs9yHMTKT51r7zHOd7ddxewJq8GkLgqrSesNBMV3IcP37-pNjS8mYDx/exec', {
                 method: 'POST',
                 body: formData
             });
