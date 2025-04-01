@@ -1,0 +1,68 @@
+body{
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 2vh;
+	padding-bottom: 7vh;
+}
+.form{
+	text-align:left;
+}
+input{
+	margin-bottom: 3vh;
+}
+label {
+	margin-bottom: 3vh;
+	display: inline-block;
+}
+
+.numberfield{
+	max-width: 50px;
+}
+.divgrouping{
+	margin-bottom: 3vh;
+
+	padding: 3vh 0px 3vh 0px;
+	background-color: rgb(235, 235, 235);
+}
+.optional{
+	color: rgb(80, 80, 80);
+}
+.sendbtn{
+	padding: 3vh 8vh 3vh 8vh;
+	background-color: black;
+	color: white;
+	border-style: solid black 2px;
+	border-radius:50px;
+	transition: 0.5s;
+	
+}
+.sendbtn:hover{
+	background-color: white;
+	color: black;
+	cursor: pointer;
+}
+@media (max-width: 600px) {
+    .form {
+        text-align: left;
+    }
+    .sendbtn {
+        width: 100%;
+    }
+    input {
+        width: 35%;
+        height: 6vh;
+    }
+    label {
+        width: auto;
+        margin-right: 10px;
+    }
+    .numberfield {
+        width: 100%;
+    }
+    .divgrouping {
+        margin-bottom: 3vh;
+        padding: 3vh 0;
+        background-color: rgb(235, 235, 235);
+    }
+
+
+}

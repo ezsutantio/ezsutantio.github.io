@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Inventar Hinuzufüger</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+	<body>
+		<h1>Inventar Produkt Hinzufügen</h1>
+		<p>Bitte füllen Sie alle Felder mit * aus</p>
+		<hr>
+		<br>
+		<div class="form">
+		<form  method="POST" action="https://script.google.com/macros/s/AKfycbyRm1JcEjmX_4w3hfBfzyHDg6WN8SG6z9nUKhd_TpkDCasEAt6jEPl_u_34A26i8bvf/exec">
+			<label style="color: rgb(85, 85, 85);" for="template">Template Auswählen</label>
+
+			<select  name="template" id="template">
+				<option value=""></option>
+  				<option value="Yubikey">Yubikey</option>
+  				<option value="Docking">Docking Station</option>
+  				<option value="DockingPwr">Docking Station Netzteil</option>
+  				<option value="LG27Zoll">LG 27BN55UP-B Monitor 27 Zoll</option>
+				<option value="LGNetz">LG BildschirmNetzteil</option>
+				<option value="TransponderB">Simonsvoss Transponder (Bobbie)</option>
+				<option value="TransponderS">Simonsvoss Transponder (Socura)</option>
+				<option value="AnkerCharger">Anker 735 Charger</option>
+				<option value="LenovoT14">Lenovo T14 G5 Laptop</option>
+				<option value="LenovoT14Pwr">Lenovo T14 G5 Laptop Netzteil</option>
+			</select><hr><br>
+			<label>Produk Name*</label>
+				<input name="produkname" type="text" required>
+
+			<label>Anzahl*</label>
+						<input class="numberfield" name="anzahl" type="" required min="1"> <br>
+
+			<label class="optional">Sonstige Erkennungsmerkmale</label>
+						<input name="erkennung" type="text" ><br>
+
+			<label class="optional">Seriennummer / P.N.</label>
+						<input name="seriennummer" type="text" ><br>
+
+			<label>Standort*</label>
+						<input  name="standort" type="text" list="standort" required>
+						<datalist name="standort" id="standort">
+							<option value="M">
+							<option value="AC">
+							<option value="K">
+							<option value="HO">						
+						</datalist><br>
+						
+			<label>Verbleib/Mitarbeiter*</label>
+						<input name="mitarbeiter" type="text" required><br>
+
+			<label>Raum*</label>
+						<input name="raum" type="text" required><br>
+
+			<label>Eigentümer*</label>
+			<input  name="eigentum" type="text" list="eigentum">
+			<datalist name="eigentum" id="eigentum">
+				<option value="bobbie">
+			</datalist><br>	
+
+		<div class="divgrouping">
+			<label class="optional">Kaufpreis mit USt.</label>
+						<input style="width: 6vh;" id="kaufpreis" name="kaufpreis" type="number" step="0.01" min="0">
+						<label class="optional">€</label>
+						<br>
+						<input name="enthaltenincheck" style="margin-left: 3vh;width: 4vh;" type="checkbox" id="enthaltencheck" onclick="checkEnthaltenChange()">
+						<label class="optional">Enthaltet in folgende Produkt: b-AC-</label>
+						<input id="enthaltenfield" class="numberfield" name="kaufpreis" type="number" disabled>
+		</div>
+						<br>
+
+			<label class="optional">Kaufdatum</label>
+						<input name="kaufdatum" type="date"><br>
+			
+		<div class="divgrouping">
+			<label>DGUV V3*</label><br>
+						<input type="radio"  name="dguv" value="Ja" required>
+  						<label for="Ja">Ja</label><br>
+  						<input type="radio"  name="dguv" value="Nein">
+  						<label for="Nein">Nein</label><br>
+		</div>
+
+			<label class="optional">Ausmusterung</label>
+						<input name="ausmusterung" type="number"><br>
+
+
+		<div class="divgrouping">
+			<label>In Verwendung*</label><br>
+						<input type="radio"  name="verwendung" value="Ja" required>
+						<label for="Ja">Ja</label><br>
+						<input type="radio"  name="verwendung" value="Nein">
+						<label for="Nein">Nein</label><br>
+		</div>
+
+			<label>Bearbeiter Kürzel*</label>
+						<input  name="kurzel" type="text" list="kurzel" required>
+						<datalist name="kurzel" id="kurzel">
+							<option value="MM">
+							<option value="TS">
+							<option value="HES">
+							<option value="KH">						
+						</datalist><br>			
+
+			<label class="optional">Bemerkung</label>
+						<input name="bemerkung" type="text"  ><br>
+			
+
+			<button class="sendbtn" type="submit">Hinzufügen</button>
+		</form>
+		</div>
+		<script src="script.js"></script>
+
+	</body>
+
+</html>
