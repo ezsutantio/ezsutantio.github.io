@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
         let formData = new FormData(this);
     
         try {
-            let response = await fetch('https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec', {
+            let response = await fetch('https://script.google.com/macros/s/AKfycbzO1ylwkUFx0w0I0B-76MU33605QPP7Nby6NJEgaKn3yrOURhCj1CjSrC0qXzldbEPQ/exec', {
                 method: 'POST',
                 body: formData
             });
@@ -39,10 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log('Server response:', result);
     
             // Optionally update the page
-            document.body.innerHTML = result; // Replace with success message
+            window.location.href = `confirmation.html?product=${encodeURIComponent(document.querySelector('input[name="produkname"]').value)}&kleber=`+result+`&anzahl=${encodeURIComponent(document.querySelector('input[name="anzahl"]').value)}&seriennr=${encodeURIComponent(document.querySelector('input[name="seriennummer"]').value)}&mitarbeiter=${encodeURIComponent(document.querySelector('input[name="mitarbeiter"]').value)}`;
+
         } catch (error) {
             console.error('Error:', error);
-        }        window.open(`confirmation.html?product=${encodeURIComponent(document.querySelector('input[name="produkname"]').value)}`, "_blank");
+        }        
+        
 
     }
     );
