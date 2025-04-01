@@ -9,6 +9,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const pwCookie = getCookie("pw");
     if (pwCookie) {
         document.querySelector('input[name="password"]').value = pwCookie;
+    }else{
+        console.log("No 'pw' cookie found."); // Debugging
     }
     if (kurzelCookie) {
         console.log("Cookie found:", kurzelCookie); // Debugging
